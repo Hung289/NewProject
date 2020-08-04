@@ -7,6 +7,7 @@ use App\Models\ResetPassword;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\System;
+use App\Models\Blog;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
