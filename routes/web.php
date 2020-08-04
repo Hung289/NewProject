@@ -148,16 +148,6 @@ Route::post('search-blog','Web\webPageController@getSearchBlog')->name('getSearc
 // Route rating star
 Route::post('postStar','Web\webPageController@voteStar')->name('postStar');
 
-//đw
-
-
-
-
-
-
-
-
-
 
 
 
