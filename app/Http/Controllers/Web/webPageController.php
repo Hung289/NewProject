@@ -103,8 +103,10 @@ class webPageController extends Controller
         $commentBlogs = CommentBlog::all();
         $blogNew = Blog::where('new', 0)->first();
         $blogs = Blog::limit(3)->get();
-        $room_all = Room::all();   
-        return view('page.home', ['address'=>$address,'mangIcon'=>$mangIcon,'hostline'=>$hostline,'email'=>$email,'room_all'=>$room_all,'Services' => $Services, 'rooms' => $rooms, 'banners' => $banners, 'commentBlogs' => $commentBlogs, 'blogNew' => $blogNew, 'blogs' => $blogs]);
+        $room_all = Room::all();
+        $reviewRoom = ReviewRoom::all();
+        $blog_image_1 = BlogImage::limit(1)->get();   
+        return view('page.home', ['reviewRoom'=>$reviewRoom,'blog_image_1'=>$blog_image_1,'address'=>$address,'mangIcon'=>$mangIcon,'hostline'=>$hostline,'email'=>$email,'room_all'=>$room_all,'Services' => $Services, 'rooms' => $rooms, 'banners' => $banners, 'commentBlogs' => $commentBlogs, 'blogNew' => $blogNew, 'blogs' => $blogs]);
     }
    
     public function getAbout()

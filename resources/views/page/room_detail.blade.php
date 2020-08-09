@@ -421,7 +421,9 @@
 
                 <div class="sidebar-wrap">
                     <div class="widget booking-widget">
-                        <h4 class="widget-title">$160.00 <span>Night</span></h4>
+                        
+                        <h4 class="widget-title">${{$room->priceNight}} <span>Night</span></h4>
+                        
                         <div class="khoitime">
                             <h5>Booking time for this room</h5>
                             <ul class="khoilisttime">

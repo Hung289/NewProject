@@ -5108,3 +5108,7 @@ textarea:focus {
     -webkit-tap-highlight-color: transparent;
     display: none;
 }
+
+#Client2 .owl-dots{
+    margin-top: 20px;
+}

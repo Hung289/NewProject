@@ -32,6 +32,11 @@ class Room extends Model
         return $this->hasMany('App\Models\ReviewRoom', 'room_id', 'id')->where('parent', 0)->orderBy('id', 'DESC')->limit(2);
     }
 
+    public function rRoom()
+    {
+        return $this->hasMany('App\Models\ReviewRoom', 'room_id', 'id');
+    }
+
     public function roomStar()
     {
         return $this->hasMany('App\Models\RoomStar', 'room_id', 'id');

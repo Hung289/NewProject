@@ -317,24 +317,35 @@
       <h1>Our Satisfaction People Say <br> About Our Services</h1>
     </div>
     <div class="owl-carousel owl-theme" id="hai">
-      @foreach($commentBlogs as $cB)
+      @foreach($reviewRoom as $rR)
       <div class="item">
         <div class="row">
           <div class="col-md-6">
-            <img src="public/web/images/img/man-image/01.jpg" alt="">
+            <div style="width:100%;height:400px">
+            @foreach($roomImages as $rI)
+            <?php $check = ($rI->room_id == $rR->room->id) ? "$rI->image" : ""?>
+            @if($check != "")
+            <img src="public/uploads/images/rooms/{{$check}}" style="height: 100%;" alt="">
+            @break
+            @endif
+            @endforeach
+            </div>
+            
           </div>
           <div class="col-md-5 offset-md-1">
             <div class="phanhoi">
               <div class="phanhoiavaname">
                 <div class="client_avar" style="border-radius:50%;overflow:hidden">
-                  <img src="public/uploads/images/user/{{$cB->user->avatar}}" alt="">
+                  <img src="public/uploads/images/user/{{$rR->user->avatar}}" alt="">
                 </div>
                 <div class="client_name">
-                  <h3>{{$cB->user->name}}</h3>
-                  <span>{{$cB->user->lever}}</span>
+                  <h3>{{$rR->user->name}}</h3>
+                  <span>{{$rR->user->created_at}}</span>
                 </div>
               </div>
-              <p>{{$cB->comment}}</p>
+              
+              <p>{{$rR->content}}</p>
+
               <div class="dauphay">
                 <img src="public/web/images/images/dauphay_03.png" alt="">
               </div>
