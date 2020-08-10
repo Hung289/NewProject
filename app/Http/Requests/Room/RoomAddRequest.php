@@ -35,11 +35,12 @@ class RoomAddRequest extends FormRequest
             'priceWeekends'=>'required',
             'priceWeekly'=>'required',
             'priceClearFee'=>'required',
-            // 'description '=>'required|min:3|max:2555',
+            'description'=>'required|max:2555',
             'category_room_id'=>'required',
             'files'=>'required',
             // 'files.*'=>'mimes:png,jpeg,gif|max:20000',
             'brand_id'=>'required',
+            'content'=>'required|max:5000'
         ];
     }
     public function messages()
@@ -57,12 +58,15 @@ class RoomAddRequest extends FormRequest
             'priceWeekends.required'=>'Giá phòng cuối tuần không được bỏ trống',
             'priceWeekly.required'=>'Giá phòng một tuần không được bỏ trống',
             'priceClearFee.required'=>'Phí dọn dẹp không được bỏ trống',
-            // 'description.required'=>'Giới thiệu về phòng không được bỏ trống',
+            'description.required'=>'Giới thiệu về phòng không được bỏ trống',
+            'description.max'=>'Description không được quá 2555 ký tự',
             'category_room_id.required'=>'Phải chọn danh mục phòng',
             'files.required'=>'Phải chọn ít nhất 1 ảnh',
             // 'files.*.mimes'=>'Ảnh nhập vào không đúng định dạng',
             // 'files.*.max'=>'Ảnh nhập vào không đc lớn hơn 20MB',
-            'brand_id.required'=>'Thương hiệu không được bỏ trống'
+            'brand_id.required'=>'Thương hiệu không được bỏ trống',
+            'content.required'=>'Content không được bỏ trống',
+            'content.max'=>'Content không được quá 5000 ký tự'
         ];
     }
 }

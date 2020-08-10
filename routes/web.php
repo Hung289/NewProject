@@ -142,7 +142,7 @@ Route::post('search/{min?}/{max?}','Web\webPageController@getFilterRoom')->name(
 // Route::post('search','Web\webPageController@ajax_list')->name('ajax_list');
 
 //Route search blog
-Route::post('search-blog','Web\webPageController@getSearchBlog')->name('getSearchBlog');
+Route::get('search-blog','Web\webPageController@getSearchBlog')->name('getSearchBlog');
 
 
 // Route rating star

@@ -93,8 +93,8 @@ class Blog extends Model
         // dd(request()->searchKeyBlog);
         $query = $this;
         if(isset(request()->searchKeyBlog)){
-            $query = $query->where('title', 'like', '%' . request()->searchKeyBlog . '%');
+            $query = $query->where('status',0)->where('title', 'like', '%' . request()->searchKeyBlog . '%');
         }
-        return $query->get();
+        return $query->paginate(3);
     }
 }

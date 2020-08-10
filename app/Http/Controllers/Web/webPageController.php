@@ -122,7 +122,7 @@ class webPageController extends Controller
 
     public function getBlogGrid()
     {
-        $blogs = Blog::paginate(9);
+        $blogs = Blog::where('status',0)->paginate(6);
         return view('page.blog_grid',compact('blogs'));
     }
 

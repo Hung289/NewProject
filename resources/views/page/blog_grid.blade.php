@@ -22,17 +22,21 @@
                 @foreach($blogs as $blog)
                 <div class="col-lg-4 col-md-6 ">
                     <div class="single-blog-wrap">
-                        <div class="post-thumbnail" style="height:250px">
-                            @foreach($blogImages as $bI)
-                            <?php $check = ($bI->blog_id == $blog->id) ? "$bI->image" : "" ?>
-                            @if(!$check == "")
-                            <a href="{{route('blogDetail',[$blog->id])}}">
+                        <a href="{{route('blogDetail',[$blog->id])}}">
+                            <div class="post-thumbnail" style="height:250px">
+
+                                @foreach($blogImages as $bI)
+                                <?php $check = ($bI->blog_id == $blog->id) ? "$bI->image" : "" ?>
+                                @if(!$check == "")
+
                                 <img src="public/uploads/images/Blog/{{$check}}" alt="Image">
-                            </a>
-                            @break
-                            @endif
-                            @endforeach
-                        </div>
+
+                                @break
+                                @endif
+                                @endforeach
+
+                            </div>
+                        </a>
                         <div class="post-desc" style="height:360px;overflow:hidden">
                             <ul class="blog-meta list-inline">
                                 <li><a href="{{route('blogDetail',[$blog->id])}}"><i class="fas fa-calendar-alt"></i>{{$blog->updated_at}}</a></li>

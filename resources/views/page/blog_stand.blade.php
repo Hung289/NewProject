@@ -39,7 +39,7 @@
                                 <li><a href="single-blog.html"><i class="fas fa-calendar-alt"></i>{{$blog->created_at}}</a></li>
                             </ul>
                             <h3><a href="{{route('blogDetail',[$blog->id])}}">{{$blog->name}}</a></h3>
-                            <p>{{$blog->title}}</p>
+                            <p>{!!$blog->title!!}</p>
                             <a href="{{route('blogDetail',[$blog->id])}}" class="btn filled-btn">View post <i class="fas fa-long-arrow-right"></i></a>
                         </div>
                     </div>
@@ -61,8 +61,8 @@
                 <div class="sidebar-wrap">
                     <div class="widget search-widget">
                         <h4 class="widget-title">Search Here</h4>
-                        <form action="{{route('getSearchBlog')}}" method="POST">
-                            <input type="hidden" name="_token" id="csrf_token" value="{{csrf_token()}}">
+                        <form action="{{route('getSearchBlog')}}" method="GET">
+                         @method('PUT')
                             <input type="text" name="searchKeyBlog" placeholder="Seacrh Keywords">
                             <button type="submit"><i class="fas fa-search"></i></button>
                         </form>

@@ -51,7 +51,7 @@
                             <div class="row">
                                 @foreach($blog2 as $b2)
                                 <div class="col-md-6">
-                                    <figure class="entry-media-img" style="height: 200px;"><img src="public/uploads/images/Blog/{{$b2->image}}" alt="Image"></figure>
+                                    <figure class="entry-media-img" style="height: 200px;"><img src="public/uploads/images/Blog/{{$b2->image}}" alt="Image" style="height:100%"></figure>
                                 </div>
                                 @endforeach
                             </div>
@@ -155,9 +155,10 @@
                 <div class="sidebar-wrap ">
                     <div class="widget search-widget">
                         <h4 class="widget-title">Search Here</h4>
-                        <form>
-                            <input type="text" placeholder="Seacrh Keywords">
-                            <button><i class="fas fa-search"></i></button>
+                        <form action="{{route('getSearchBlog')}}" method="GET">
+                             @method('PUT')
+                            <input type="text" name="searchKeyBlog" placeholder="Seacrh Keywords">
+                            <button type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
                     <div class="widget recent-news">

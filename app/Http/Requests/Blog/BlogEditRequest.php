@@ -25,8 +25,8 @@ class BlogEditRequest extends FormRequest
     {
         return [
             'name'=>'required',
-            'content'=>'required',
-            'title'=>'required',
+            'content'=>'required|max:5000',
+            'title'=>'required|max:255',
             'category_blog_id'=>'required',
             'user_id'=>'required'
         ];
@@ -39,7 +39,9 @@ class BlogEditRequest extends FormRequest
             'content.required'=>'Content không được bỏ trống',
             'title.required'=>'Title không được bỏ trống',
             'category_blog_id.required'=>'Danh muc của blog không được bỏ trống',
-            'user_id.required'=>'Người đăng bài không được bỏ trống'
+            'user_id.required'=>'Người đăng bài không được bỏ trống',
+            'title.max'=>'Title không được quá 255 ký tự',
+            'content.max'=>'Content không được quá 5000 ký tự'
         ];
     }
 }
