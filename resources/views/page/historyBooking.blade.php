@@ -32,7 +32,7 @@
                                 <td>{{($order->payment == 0)? "Thanh toán tại quầy" : "Thanh toán online"}}</td>
                                 <td>{{$order->created_at}}</td>
                                 <td>
-                                    <button type="button" url="{{route('admin.order.show',['order'=>$order->id])}}"  data-toggle="modal" data-target=".bd-example-modal-lg" class="btn btn-success xemchitiet">
+                                    <button type="button" url="{{route('showHis',['order'=>$order->id])}}"  data-toggle="modal" data-target=".bd-example-modal-lg" class="btn btn-success xemchitiet">
                                         <i class="far fa-eye"></i>
                                     </button>
                                 </td>
@@ -51,6 +51,6 @@
         <!-- /.col -->
     </div>
     <!-- /.row -->
-    @include('admin.modal')
+    @include('page.modal')
 </section>
 @stop

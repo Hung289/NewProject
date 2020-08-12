@@ -87,7 +87,7 @@
                   <select name="level" class="form-control" id="">
                     <option value="0">Super Admin</option>
                     <option value="1">Admin</option>
-                    <option value="2">Thường Dân</option>
+                    
                   </select>
                 </div>
                 <div class="form-group">

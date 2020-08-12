@@ -45,6 +45,9 @@
     border-top: 1px dashed gray;
     padding-top: 20px;
 }
+.chitietnguoi.ola{
+    border-top: none !important;
+}
 .dongdichvu p{
     margin: 5px 0px;
 }

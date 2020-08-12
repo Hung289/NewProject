@@ -98,7 +98,8 @@ Route::get('serviceMasterView/{id}','Web\webPageController@getServiceMasterNotId
 
 
 
-//Trang blogDetail
+//hiển thị historybooking
+Route::get('his-booking/{order}','Web\webPageController@showHis')->name('showHis');
 
 
 

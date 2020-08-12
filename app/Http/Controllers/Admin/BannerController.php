@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use App\Http\Requests\Banner\BannerAddRequest;
+use App\Http\Requests\Banner\BannerEditRequest;
 
 class BannerController extends Controller
 {
@@ -77,7 +78,7 @@ class BannerController extends Controller
      * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Banner $banner)
+    public function update(BannerEditRequest $request, Banner $banner)
     {
         $model = $banner->updateEdit();
         // dd($model);

@@ -40,15 +40,7 @@
             </p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="pages/widgets.html" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Widgets
-              <span class="right badge badge-danger">New</span>
-            </p>
-          </a>
-        </li>
+        
         @if($user->can('admin.getEditAdminPartner'))
         <li class="nav-item">
           <a href="{{route('admin.getEditAdminPartner',['id'=>Auth::user()->id])}}" class="nav-link">
@@ -91,7 +83,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
-              Người dùng
+              Tài khoản
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
@@ -99,13 +91,13 @@
             <li class="nav-item">
               <a href="{{route('admin.user.index')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Danh sách người dùng</p>
+                <p>Danh sách tài khoản</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{{route('admin.user.create')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Thêm mới người dùng</p>
+                <p>Thêm mới tài khoản</p>
               </a>
             </li>
           </ul>
@@ -351,7 +343,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-table"></i>
             <p>
-              Quản lý bình luận phòng
+              Quản lý bình luận 
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>

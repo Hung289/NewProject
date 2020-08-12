@@ -28,7 +28,7 @@ class ServiceAddRequest extends FormRequest
             'image'=>'required|mimes:png,jpeg,gif',
             'price'=>'required',
             'category_service_id'=>'required',
-            'description'=>'required'
+            'description'=>'required|max:255'
         ];
     }
     public function messages()
@@ -40,7 +40,8 @@ class ServiceAddRequest extends FormRequest
             'image.mimes'=>'Ảnh không đúng định dạng',
             'price.required'=>'Giá dịch vụ không được để trống',
             'category_service_id.required'=>'Danh mục dịch vụ không được để trống',
-            'description.required'=>'chú thích không được để trống'
+            'description.required'=>'chú thích không được để trống',
+            'description.max'=>'chú thích không được quá 255 ký tự'
         ];
     }
 }

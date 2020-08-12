@@ -92,7 +92,7 @@
                   <select name="level" class="form-control" id="">
                     <option value="0" @if($user->level == 0) selected @endif>Super Admin</option>
                     <option value="1" @if($user->level == 1) selected @endif>Admin</option>
-                    <option value="2" @if($user->level == 2) selected @endif>Dân thường</option>
+                    <option value="2" @if($user->level == 2) selected @endif>Khách hàng</option>
                   </select>
                 </div>
 
@@ -110,7 +110,7 @@
                   @endif
                   @endforeach
                   @if($user->level == 2)
-                  <p>Thường dân không được vào đây nên không cần chọn quyền</p>
+                  <p>Khách hàng không được vào đây nên không cần chọn quyền</p>
                   @endif
                 </div>
               </div>
@@ -138,7 +138,7 @@
               @elseif($user->level == 1)
               <p class="text-muted text-center">Amin</p>
               @elseif($user->level == 2)
-              <p class="text-muted text-center">Thường dân</p>
+              <p class="text-muted text-center">Khách hàng</p>
               @endif
 
               <ul class="list-group list-group-unbordered mb-3">

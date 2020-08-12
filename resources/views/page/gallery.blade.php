@@ -43,7 +43,10 @@
                 @endforeach
             </div>
         </div>
-        
+        <div class="paginateChung">
+            {{$RoomImages->links()}}
+        </div>
+
     </div>
 </section>
 

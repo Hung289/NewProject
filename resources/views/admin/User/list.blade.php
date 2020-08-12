@@ -64,7 +64,7 @@
                                     <td>admin</td>
                                     @endif
                                     @if($user->level==2)
-                                    <td>Thường dân</td>
+                                    <td>Khách hàng</td>
                                     @endif
                                     <td>
                                         <button  type="button" url="{{route('admin.user.show',['user'=>$user->id])}}" data-toggle="modal" data-target=".bd-example-modal-lg" class="btn btn-success xemchitiet">

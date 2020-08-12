@@ -99,7 +99,7 @@ class webPageController extends Controller
         $Services = CategoryService::paginate(3);
         
         $rooms = Room::paginate(6);
-        $banners = Banner::limit(4)->get();
+        $banners = Banner::where('status',0)->limit(4)->get();
         $commentBlogs = CommentBlog::all();
         $blogNew = Blog::where('new', 0)->first();
         $blogs = Blog::limit(3)->get();
@@ -165,14 +165,14 @@ class webPageController extends Controller
     public function getGallery()
     {
         $rooms = Room::all();
-        $RoomImages = RoomImage::all();
+        $RoomImages = RoomImage::paginate(9);
         return view('page.gallery', ['rooms' => $rooms, 'RoomImages' => $RoomImages]);
     }
 
     public function getRoomList(Request $request,RoomStar $roomStar)
     {
         $roombt = Room::all();
-        $rooms = Room::where('status',0)->orderByParam()->paginate(4);
+        $rooms = Room::where('status',0)->orderBy('id','DESC')->orderByParam()->paginate(4);
         return view('page.room_list', ['rooms' => $rooms]);
     }
 
@@ -360,8 +360,7 @@ class webPageController extends Controller
         $params = array();
 
         if (!empty($request->searchFromDate) && !empty($request->searchToDate)) {
-            // cái params date này ko cần cho vào room đâu, gọi vào thằng order detail là được
-            // nên là ko cần cho vào params
+ 
             $from_date = $request->searchFromDate;
             $to_date = $request->searchToDate;
             $listRoomUsed  = $orderDetail->checkRoomForDate($from_date, $to_date);
@@ -484,11 +483,20 @@ class webPageController extends Controller
 
     public function historyBooking()
     {
-        $orders = Order::all();
+        $orders = Order::orderBy('id','DESC')->get();
         $roomImages = RoomImage::all();
         $orderDetils = OrderDetail::all();
         $orderDetilService = OrderDetailService::all();
         $services = Service::all();
         return view('page.historyBooking',compact('services','orders','roomImages','orderDetils','orderDetilService'));
+    }
+
+    public function showHis($orders){
+        $order = Order::find($orders);
+        $services = Service::all();
+        $roomImages = RoomImage::all();
+        $orderDetils = OrderDetail::all();
+        $orderDetilService = OrderDetailService::all();
+        return view('admin.Order.view',compact('services','order','orderDetils','orderDetilService','roomImages'));
     }
 }

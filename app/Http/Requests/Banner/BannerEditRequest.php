@@ -4,7 +4,7 @@ namespace App\Http\Requests\Banner;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BannerAddRequest extends FormRequest
+class BannerEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class BannerAddRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required | unique:banners',
+            'name'=>'required',
             'content'=>'required|max:30',
-            'image'=>'required | mimes:png,jpeg,gif',
+            'image'=>' mimes:png,jpeg,gif',
         ];
     }
 
@@ -34,10 +34,8 @@ class BannerAddRequest extends FormRequest
     {
         return [
             'name.required'=>'Tên banner không được bỏ trống',
-            'name.unique'=>'Tên banner đã tồn tại',
             'content.required'=>'Nội dung banner không được bỏ trống',
             'content.max'=>"Content không quá 30 kí tự",
-            'image.required'=>'Ảnh banner không được để trống',
             'image.mimes'=>'Ảnh banner không đúng định dạng'
         ];
     }

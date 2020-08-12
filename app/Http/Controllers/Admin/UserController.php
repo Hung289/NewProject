@@ -56,7 +56,7 @@ class UserController extends Controller
         if ($model && $roles) {
             return redirect()->route('admin.user.create')->with('success', 'Thêm mới người dùng thành công');
         } else {
-            return redirect()->back()->with('error', 'Thêm mới người dùng thất bại');
+            return redirect()->back()->with('error', 'Thêm mới người dùng thất bại,mời chọn quyền cho tài khoản');
         }
     }
 
